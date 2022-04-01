@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         //Declaraciones
-        int num[], cant = 4, i, mayor, menor, suma = 0;
+        int num[], cant = 4, i, j, aux, mayor, menor, suma = 0;
         float prom;
         Scanner input = new Scanner(System.in);
         num = new int[cant];
@@ -56,5 +56,23 @@ public class Main {
         System.out.println("La suma de todos los numeros son: " + suma);
         //Muesta el promedio
         System.out.println("El promedio de todos los valores del vector es: " + prom);
+        
+        //Ordenar de mayor a menor
+        for (i = 0; i < cant; i++) {
+            for (j = i+1; j < cant; j++) {
+                if(num[i] > num[j]){
+                    aux = num[i];
+                    num[i] = num[j];
+                    num[j] = aux;
+                }
+            }
+        }
+        
+        System.out.println("Vector con los elementos ordenados: ");
+        //Mostrar numeros cargados en el vector
+        for(i=0; i<cant ; i++){
+            System.out.println(num[i]);
+        }
+        
     }
 }
