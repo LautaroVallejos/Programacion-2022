@@ -46,18 +46,21 @@ public class Main {
         //Mostrar numeros cargados en el vector
         for(i=0; i<cant ; i++){
             System.out.println(num[i]);
-        }
+        }   
         
         //Mostrar el mayor
         System.out.println("El mayor numero del vector es: " + mayor);
+        
         //Mostrar el menor
         System.out.println("El menor numero del vector es: " + menor);
+        
         //Muestra la suma
         System.out.println("La suma de todos los numeros son: " + suma);
+        
         //Muesta el promedio
         System.out.println("El promedio de todos los valores del vector es: " + prom);
         
-        //Ordenar de mayor a menor
+        //Ordenar de menor a mayor
         for (i = 0; i < cant; i++) {
             for (j = i+1; j < cant; j++) {
                 if(num[i] > num[j]){
@@ -68,7 +71,24 @@ public class Main {
             }
         }
         
-        System.out.println("Vector con los elementos ordenados: ");
+        System.out.println("Vector con los elementos ordenados de menor a mayor: ");
+        //Mostrar numeros cargados en el vector
+        for(i=0; i<cant ; i++){
+            System.out.println(num[i]);
+        }
+        
+        //Ordenar de mayor a menor
+        for (i = 0; i < cant; i++) {
+            for (j = i+1; j < cant; j++) {
+                if(num[i] < num[j]){
+                    aux = num[i];
+                    num[i] = num[j];
+                    num[j] = aux;
+                }
+            }
+        }
+        
+        System.out.println("Vector con los elementos ordenados de mayor a menor: ");
         //Mostrar numeros cargados en el vector
         for(i=0; i<cant ; i++){
             System.out.println(num[i]);
