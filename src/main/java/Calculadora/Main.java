@@ -27,10 +27,10 @@ public class Main {
         
         //Logica
         switch(op){
-            case 1: System.out.println("El resultado de la suma es: "); System.out.println(Calculadora.sumar(numA, numB));break;
-            case 2: System.out.println("El resultado de la resta es: "); System.out.println(Calculadora.restar(numA, numB));break;
-            case 3: System.out.println("El resultado de la multiplicacion es: "); System.out.println(Calculadora.multiplicar(numA, numB));break;
-            case 4: System.out.println("El resultado de la division es: "); System.out.println(Calculadora.dividir(numA, numB));break;
+            case 1: System.out.println("El resultado de la suma es: " + Calculadora.sumar(numA, numB));break;
+            case 2: System.out.println("El resultado de la resta es: " + Calculadora.restar(numA, numB));break;
+            case 3: System.out.println("El resultado de la multiplicacion es: " + Calculadora.multiplicar(numA, numB));break;
+            case 4: System.out.println("El resultado de la division es: " + Calculadora.dividir(numA, numB));break;
             default: System.out.println("Error en el ingreso de la operacion, intente nuevamente");break;
         }
     }
