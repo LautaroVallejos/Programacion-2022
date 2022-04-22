@@ -1,98 +1,84 @@
-package com.mycompany.repo;
 //Recursos
+package com.mycompany.repo;
 import java.util.Scanner;
 /*@author Coffee Lover*/
 
-/*Asunto: Vectores
-    Ejercicio 1: Cargar un vector | X
-    Ejercicio 2: Mostrar el vector | X
-    Ejercicio 3: Mostrar el numero mayor | X
-    Ejercicio 4: Mostrar el menor | X
-    Ejercicio 5: Mostrar la suma de todos los numeros | X
-    Ejercicio 6: Mostrar el promedio de todos los numeros | X
-*/
 public class Main {
+// auto es una instancia de la clase Car
+// 'static' delimita que esa instancia solo se va a utilizar en esta clase
+    static Car auto = new Car();
+    static Car auto1 = new Car();
+    static Car auto2 = new Car();
+    
+//Funcion Principal
     public static void main(String[] args) {
-        //Declaraciones
-        int num[], cant = 4, i, j, aux, mayor, menor, suma = 0;
-        float prom;
-        Scanner input = new Scanner(System.in);
-        num = new int[cant];
+    // Se cargan los datos de los 3 objetos (autos) y Se muestran los datos de los objetos
+        auto.loadData();
+        auto.getData();
         
-        //Cargar el vector 
-        for (i = 0; i < cant; i++) {
-            System.out.println("Ingrese numero posicion " + (i+1));
-            num[i] = input.nextInt();
-            suma += num[i];
+        auto1.loadData();
+        auto1.getData();
+        
+        auto2.loadData();    
+        auto2.getData();
+        
+        compareAge(auto, auto1, auto2);
+    }
+    
+// Funcion que compara el modelo(año) del auto
+    public static void compareAge(Car auto, Car auto1, Car auto2){
+        int autoAge = auto.age;
+        int auto1Age = auto1.age;
+        int auto2Age = auto2.age;
+        
+        System.out.println("Comparando los modelos de los vehiculos por 'más reciente a menos'...");
+        
+        if(autoAge > auto1Age && autoAge > auto2Age){
+            System.out.println("Puesto 1: ");
+            auto.getData();
+            if(auto1Age > auto2Age){
+                System.out.println("Puesto 2: ");
+                auto1.getData();
+                System.out.println("Puesto 3: ");
+                auto2.getData();
+            } else {
+                System.out.println("Puesto 2: ");
+                auto2.getData();
+                System.out.println("Puesto 3: ");
+                auto1.getData();
+            }     
         }
         
-        //Se setea el valor incial para compararlos
-        mayor = num[0];
-        menor = num[0];
-        
-        //Se recorre nuevamente y se comparan
-        for (i = 0; i < cant; i++) {
-            if(num[i] > mayor){
-                mayor = num[i];
-            }
-            
-            if(num[i] < menor){
-                menor = num[i];
-            }
-        }
-        prom = suma/cant;
-        System.out.println("Los numeros ingresados en el vector son: ");
-        
-        //Mostrar numeros cargados en el vector
-        for(i=0; i<cant ; i++){
-            System.out.println(num[i]);
-        }   
-        
-        //Mostrar el mayor
-        System.out.println("El mayor numero del vector es: " + mayor);
-        
-        //Mostrar el menor
-        System.out.println("El menor numero del vector es: " + menor);
-        
-        //Muestra la suma
-        System.out.println("La suma de todos los numeros son: " + suma);
-        
-        //Muesta el promedio
-        System.out.println("El promedio de todos los valores del vector es: " + prom);
-        
-        //Ordenar de menor a mayor
-        for (i = 0; i < cant; i++) {
-            for (j = i+1; j < cant; j++) {
-                if(num[i] > num[j]){
-                    aux = num[i];
-                    num[i] = num[j];
-                    num[j] = aux;
-                }
-            }
+        if(auto1Age > autoAge && auto1Age > auto2Age){
+            System.out.println("Puesto 1: ");
+            auto1.getData();
+            if(autoAge > auto2Age){
+                System.out.println("Puesto 2: ");
+                auto.getData();
+                System.out.println("Puesto 3: ");
+                auto2.getData();
+            } else {
+                System.out.println("Puesto 2: ");
+                auto2.getData();
+                System.out.println("Puesto 3: ");
+                auto.getData();
+            }     
         }
         
-        System.out.println("Vector con los elementos ordenados de menor a mayor: ");
-        //Mostrar numeros cargados en el vector
-        for(i=0; i<cant ; i++){
-            System.out.println(num[i]);
+        if(auto2Age > autoAge && auto2Age > auto1Age){
+            System.out.println("Puesto 1: ");
+            auto2.getData();
+            if(autoAge > auto1Age){
+                System.out.println("Puesto 2: ");
+                auto.getData();
+                System.out.println("Puesto 3: ");
+                auto1.getData();
+            } else {
+                System.out.println("Puesto 2: ");
+                auto1.getData();
+                System.out.println("Puesto 3: ");
+                auto.getData();
+            }     
         }
-        
-        //Ordenar de mayor a menor
-        for (i = 0; i < cant; i++) {
-            for (j = i+1; j < cant; j++) {
-                if(num[i] < num[j]){
-                    aux = num[i];
-                    num[i] = num[j];
-                    num[j] = aux;
-                }
-            }
-        }
-        
-        System.out.println("Vector con los elementos ordenados de mayor a menor: ");
-        //Mostrar numeros cargados en el vector
-        for(i=0; i<cant ; i++){
-            System.out.println(num[i]);
-        }
-        
     }
 }
