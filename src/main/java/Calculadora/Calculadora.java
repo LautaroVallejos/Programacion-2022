@@ -1,17 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+//Recursos
 package Calculadora;
-
 import java.util.Scanner;
 
 /**
- *
  * @author Coffee Lover
  */
-public class Calculadora {
-    
+
+public class Calculadora { 
 //Inicializacion
     static Scanner input = new Scanner(System.in);
     public static float numA, numB, res;
