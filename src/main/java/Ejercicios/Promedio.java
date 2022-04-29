@@ -20,18 +20,10 @@ import java.util.Scanner;
  */
 public class Promedio {
     int num1, num2, num3, num4, prom;
-    
-//    //Metodo contructor
-//    public Promedio(){
-//        this.num1 = num1;
-//        this.num2 = num2;
-//        this.num3 = num3;
-//        this.num4 = num4;
-//        this.prom = prom;
-//    }
    
     public void calcularPromedio(){
         Scanner input = new Scanner(System.in);
+        
         
         System.out.println("Ingrese primer numero: ");
         num1 = input.nextInt();
@@ -41,6 +33,15 @@ public class Promedio {
         num3 = input.nextInt();
         System.out.println("\nIngrese cuarto numero: ");
         num4 = input.nextInt();
+        
+        //Logica
+        prom=0;
+        prom+=num1;
+        prom+=num2;
+        prom+=num3;
+        prom+=num4;
+        
+        prom = prom / 4;
     }
     
     public void calcularPromedio(int num1, int num2, int num3, int num4){
